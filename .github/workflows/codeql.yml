@@ -5,8 +5,8 @@ on:
     branches: [ "master" ]
   pull_request:
     branches: [ "master" ]
-  workflow_dispatch: 
-  
+  workflow_dispatch:
+
 
 jobs:
   analyze:
@@ -39,6 +39,7 @@ jobs:
       with:
         languages: ${{ matrix.language }}
         build-mode: ${{ matrix.build-mode }}
+        queries: security-and-quality
 
     - name: Run manual build steps
       if: matrix.build-mode == 'manual'
